@@ -27,7 +27,7 @@ public class SpaDayController {
     @GetMapping(value="")
     @ResponseBody
     public String customerForm () {
-        String html = "<form method = 'post'>" +
+        String html = "<form  action='/menu' method = 'post'>" +
                 "Name: <br>" +
                 "<input type = 'text' name = 'name'>" +
                 "<br>Skin type: <br>" +
@@ -41,6 +41,7 @@ public class SpaDayController {
                 "<select name = 'manipedi'>" +
                 "<option value = 'manicure'>Manicure</option>" +
                 "<option value = 'pedicure'>Pedicure</option>" +
+                "<option value = 'both'>both</option>" +
                 "</select><br>" +
                 "<input type = 'submit' value = 'Submit'>" +
                 "</form>";
@@ -68,7 +69,14 @@ public class SpaDayController {
         model.addAttribute("manipedi", manipedi);
 
         ArrayList<String>  polishChoices = new ArrayList<>();
-        
+        polishChoices.add("#ed553e");
+        polishChoices.add("#ed3e4d");
+        polishChoices.add("#d12c71");
+        polishChoices.add("#a31787");
+        polishChoices.add("#34a39e");
+        polishChoices.add("#63c295");
+        model.addAttribute("polishChoices",polishChoices);
+
         return "menu";
     }
 }
