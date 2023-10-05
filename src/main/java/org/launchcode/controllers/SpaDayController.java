@@ -67,8 +67,8 @@ public class SpaDayController {
         model.addAttribute("skintype", skintype);
         model.addAttribute("manipedi", manipedi);
 
-
-
+        ArrayList<String>  polishChoices = new ArrayList<>();
+        
         return "menu";
     }
 }
